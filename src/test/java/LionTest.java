@@ -15,24 +15,27 @@ public class LionTest {
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
-    return Arrays.asList(new Object[][]{
-            {"Самка",false},
-            {"Самец",true},
-    });}
+        return Arrays.asList(new Object[][]{
+                {"Самка", false},
+                {"Самец", true},
+        });
+    }
 
     private String sex;
-private boolean expected;
-public LionTest (String sex,boolean expected) {
-    this.sex = sex;
-    this.expected = expected;
-}
+    private boolean expected;
+
+    public LionTest(String sex, boolean expected) {
+        this.sex = sex;
+        this.expected = expected;
+    }
+
     @Test
-    public void lionTest() throws Exception{
+    public void lionTest() throws Exception {
 
         Feline feline = new Feline();
-        Lion lion = new Lion(sex,feline);
+        Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
     }
 

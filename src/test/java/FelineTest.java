@@ -27,7 +27,7 @@ public class FelineTest {
 
     @Test
     public void eatMeatReturnCorrectValueTest() throws Exception {
-        List<String> expectedListFood =  List.of("Животные", "Птицы", "Рыба");
+        List<String> expectedListFood = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(felineSpy.getFood("Хищник")).thenReturn(expectedListFood);
         List<String> actualListFood = felineSpy.eatMeat();
         assertThat(expectedListFood, containsInAnyOrder(actualListFood.toArray()));
