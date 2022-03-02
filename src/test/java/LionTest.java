@@ -9,6 +9,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.Arrays;
 import java.util.Collection;
 
+import static org.junit.Assert.assertEquals;
+
 
 @RunWith(Parameterized.class)
 public class LionTest {
@@ -35,7 +37,7 @@ public class LionTest {
         Feline feline = new Feline();
         Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
-        Assert.assertEquals(expected, actual);
+        assertEquals("Проверка пола",expected, actual);
 
     }
 

@@ -30,21 +30,21 @@ public class FelineTest {
         List<String> expectedListFood = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(felineSpy.getFood("Хищник")).thenReturn(expectedListFood);
         List<String> actualListFood = felineSpy.eatMeat();
-        assertThat(expectedListFood, containsInAnyOrder(actualListFood.toArray()));
+        assertThat("Проверка ListFood",expectedListFood, containsInAnyOrder(actualListFood.toArray()));
     }
 
     @Test
     public void getFamilyReturnCorrectValueTest() {
         String expectedFamily = "Кошачьи";
         String actualFamily = feline.getFamily();
-        assertEquals(expectedFamily, actualFamily);
+        assertEquals("Проверка семейства",expectedFamily, actualFamily);
     }
 
     @Test
     public void getKittensWithOutKittensCountReturnCorrectValueTest() {
         int expectedKittensCount = 1;
         int actualKittensCount = feline.getKittens();
-        assertEquals(expectedKittensCount, actualKittensCount);
+        assertEquals("Проверка метода getKittens",expectedKittensCount, actualKittensCount);
     }
 
 }

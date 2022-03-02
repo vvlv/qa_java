@@ -27,7 +27,7 @@ public class CatTest {
     public void getSoundTest() {
         String expected = cat.getSound();
         String actual = "Мяу";
-        assertEquals(expected, actual);
+        assertEquals("Проверка метода getSound",expected, actual);
     }
 
     @Test
@@ -35,6 +35,6 @@ public class CatTest {
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> actual = cat.getFood();
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        assertEquals(expected, actual);
+        assertEquals("Проверка метода getFood",expected, actual);
     }
 }
